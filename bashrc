@@ -1,54 +1,78 @@
-#WELCOME SCREEN
-##################################################
-clear
-echo -ne "Ahoj, $USER. Dnes je "; date +"%d.%m.%Y. Čas %T."
-echo -ne "${WHITE}";
+# /etc/bash.bashrc
 
 #ALIASES
 ##################################################
-alias top="atop"
+alias top="htop"
+alias avahi="sudo avahi-daemon;avahi-discover;"
+alias avahid="sudo avahi-daemon &"
+alias avahib="avahi-discover"
 alias ..="cd .."
 alias ....="cd ../.."
-alias ......="cd ../../.."
 alias c="clear"
+alias cp="cp -iv"
+alias m="cvlc /home/zef/audio/music/singly/*.ogg"
 alias diff="colordiff"
 alias df="df -h"
 alias dir="dir --color=auto"
 alias du="du -c -h"
-alias ff="firefox"
-alias gbashrc="sudo geany /etc/bash.bashrc"
+alias ff="firefox &"
+alias find="find -name"
+alias g="sudo geany"
 alias ga="git add"
-alias gc="git commit -m"
-alias gp="git push -u origin master"
+alias gcl="git clone"
 alias gs="git status"
+alias gp="git pull --all"
 alias grep="grep --color=auto"
 alias h="history"
 alias 000="chmod 000"
 alias 644="chmod 644"
-alias 644="chmod 644"
 alias 755="chmod 755"
-alias j="jobs -l"
+alias date="date --iso-8601"
 alias ls="ls --color=auto"
 alias ls.="ls -d .* --color=auto"
 alias ll="ls -la"
 alias google="lynx http://google.com"
-alias mkdir="mkdir -pv"
+alias path="readlink -f"
 alias n="sudo nano"
 alias bashrc="sudo nano /etc/bash.bashrc"
-alias r="pacman -Rs"
-alias s="pacman -S"
+alias pgrep="pgrep -lu"
 alias ping="ping -c 5"
 alias py="python"
 alias pwb="python pwb.py"
+alias ccrc="cd core;python pwb.py cosmetic_changes -recentchanges;cd .."
+alias ccnp="cd core;python pwb.py cosmetic_changes -newpages:1000;cd .."
+alias reddir="cd core;python pwb.py redirect double -always;cd .."
+alias 2red="cd core;python pwb.py redirect double -always;cd .."
 alias off="sudo shutdown now"
+alias gerrit="ssh -p 29418 zef@gerrit.wikimedia.org"
 alias tools="ssh login.tools.wmflabs.org"
+alias speed="speedometer -r wlp4s0 -t wlp4s0"
+alias sub="subliminal download -l en"
 alias root="sudo su"
+alias boincs="systemctl start boinc.service"
+alias dict="sdcv"
 alias count="wc -l"
-alias copy="xclip -sel clip"
+alias wifi="sudo wifi-menu"
+alias mv="mv -iv"
+alias towd="mv -iv user-config.py wd-user-config.py"
+alias fromwd="mv -iv user-config.py wd-user-config.py"
+alias towi="mv -iv user-config.py wi-user-config.py"
+alias fromwi="mv -iv wi-user-config.py user-config.py"
+alias tows="mv -iv user-config.py ws-user-config.py"
+alias fromws="mv -iv ws-user-config.py user-config.py"
+alias unmount="umount"
+alias xclip="xclip -selection clipboard"
+alias o="xdg-open"
 alias y="yaourt"
-alias ins="yaourt -S --noconfirm"
-alias up="yaourt -Syua"
-alias upnoconfirm="yaourt -Syua --noconfirm"
+alias y="sudo yaourt"
+alias r="sudo yaourt -R"
+alias uns="sudo yaourt -Rs"
+alias r="yaourt -Rs"
+alias i="yaourt -S --noconfirm"
+alias s="yaourt -S"
+alias up="yaourt -Syu --aur"
+alias yt="youtube-dl"
+alias upnc="yaourt -Syu --aur --noconfirm"
 
 #EXPORTS
 ##################################################
@@ -74,15 +98,6 @@ dirsize () {
   egrep "^ *[0-9.]*M" /tmp/list
   egrep "^ *[0-9.]*G" /tmp/list
   rm -rf /tmp/list
-}
-
-#mkdir and cd inside;usage:>mkcd newdir
-mkcd() {
-  if [ $# != 1 ]; then
-    echo "Usage: mkcd <dir>"
-  else
-    mkdir -p $1 && cd $1
-  fi
 }
 
 #rename all the files which contain uppercase letters to lowercase in the current folder;usage:>filestolower
@@ -134,8 +149,7 @@ remindme() {
 }
 
 
-#calculator using awk;usage:>calc 34*2
-calc(){ awk "BEGIN { print $*}"; }
-
 #back up a file; usage "bu filename.txt" 
 bu () { cp $1 ${1}-"date +%Y%m%d%H%M".backup ; }
+
+set completion-ignore-case on
