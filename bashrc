@@ -6,13 +6,14 @@ alias 000='chmod 000'
 alias 2red='cd core;python pwb.py redirect double -always;cd ..'
 alias 644='chmod 644'
 alias 755='chmod 755'
+alias +x='chmod +x'
 alias avahi='sudo avahi-daemon;avahi-discover;'
 alias avahib='avahi-discover'
 alias avahid='sudo avahi-daemon &'
 alias bashrc='sudo nano /etc/bash.bashrc'
 alias c='clear'
-#alias ccnp='python pwb.py cosmetic_changes -newpages:1000;cd ..'
-#alias ccrc='python pwb.py cosmetic_changes -recentchanges;cd ..'
+alias ccnp='python3 pwb.py cosmetic_changes -newpages:1000;cd ..'
+alias ccrc='python3 pwb.py cosmetic_changes -recentchanges;cd ..'
 alias count='ls -1|wc -l'
 alias core='cd /mnt/c/Users/wesalius/Desktop/wiki/core/'
 alias wiki='cd /mnt/c/Users/wesalius/Desktop/wiki/'
@@ -30,15 +31,10 @@ alias fromwi='mv -iv wi-user-config.py user-config.py'
 alias fromws='mv -iv ws-user-config.py user-config.py'
 alias ga='git add'
 alias gcl='git clone'
-alias gerrit='ssh -p 29418 zef@gerrit.wikimedia.org'
-alias google='lynx http://google.com'
 alias gp='git pull --all'
 alias grep='grep --color=auto'
-alias gs='git status'
 alias h='history'
 alias ins='sudo apt-get install'
-alias ll='ls -la'
-alias ls.='ls -d .* --color=auto'
 alias ls='ls --color=auto'
 alias mv='mv -iv'
 alias n='sudo nano'
@@ -52,6 +48,7 @@ alias pwb='python pwb.py'
 alias py='python'
 alias reddir='cd core;python pwb.py redirect double -always;cd ..'
 alias rm='rm -i'
+alias rem='sudo apt-get remove'
 alias root='sudo su'
 alias speed='speedtest-cli'
 alias sub='subliminal download -l en'
@@ -99,7 +96,7 @@ LESS_TERMCAP_ue=$(printf '\e[0m') \
 LESS_TERMCAP_us=$(printf '\e[1;32m') \
 man '$@'
 }
-#finds directory sizes of current dir;usage:>dirsize
+#finds directory sizes of current dir;usage:dirsize
 dirsize () {
   du -shx * .[a-zA-Z0-9_]* 2> /dev/null | egrep '^ *[0-9.]*[MG]' | sort -n > /tmp/list
   egrep '^ *[0-9.]*M' /tmp/list
@@ -107,7 +104,7 @@ dirsize () {
   rm -rf /tmp/list
 }
 
-#rename all the files which contain uppercase letters to lowercase in the current folder;usage:>filestolower
+#rename all the files which contain uppercase letters to lowercase in the current folder;usage: filestolower
 function filestolower(){
   read -p 'This will rename all the files and directories to lowercase in the current folder, continue? [y/n]: ' letsdothis
   if [ '$letsdothis' = 'y' ] || [ '$letsdothis' = 'Y' ]; then
@@ -131,7 +128,7 @@ function filestolower(){
   fi
 }
 
-#chown -R on file;usage:>grab file
+#chown -R on file;usage:grab file.txt
 grab() {
 	sudo chown -R ${USER} ${1:-.}
 }
@@ -156,8 +153,8 @@ remindme() {
 }
 
 
-#back up a file; usage 'bu filename.txt' 
-bu () { cp $1 ${1}-'date +%Y%m%d%H%M'.backup ; }
+#back up a file; usage 'bak filename.txt' 
+bak () { cp $1 ${1}-'date +%Y%m%d%H%M'.backup ; }
 
 set completion-ignore-case on
 
