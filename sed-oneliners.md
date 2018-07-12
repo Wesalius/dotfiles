@@ -1,83 +1,82 @@
 ```
-sed[options] sed-command [input-file]
+sed [options] sed-command [input-file]
 ```
-
 ## Substitution
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/hello/world/' input.txt > output.txt`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Delete a Line Containing a Specific String
+`sed '/foo/d' bar.txt`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Insert text to beginning of file
+`sed -i '1s/^/foo/' bar.txt`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Insert text to end of file
+`sed -e "\$aFOOBAR"`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Extract first line of a file
+`sed -n '1p' foo.txt`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Extract Lines that start with a specified string
+`sed -n -e '/^String/p' foo.txt`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Extract Lines that end with a specified string
+`sed -n -e '/String$/p' foo.txt`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Make all letters lowercase
+`sed 's/./\L&/g' file.txt`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Make All Letters Uppercase
+`sed 's/./\U&/g' file.txt`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Convert DOS newlines (CR/LF) to Unix format
+`sed 's/.$//'`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`\\\r`/"`
+## Convert Unix newlines (LF) to DOS format
+`sed 's/$'"/`echo \\\r`/"`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Delete trailing whitespace (spaces, tabs) from end of each line
+`sed 's/[ \t]*$//'`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Delete leading whitespace (spaces, tabs) from front of each line
+`sed 's/^[ \t]*//'`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Insert 4 blank spaces at beginning of each line
+`sed 's/^/    /'`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Print first 10 lines of file
+`sed 10q`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Print only lines which do not match regular expression
+`sed -n '/regexp/!p' or sed -n '/regexp/d'`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Print only lines of less than 65 characters
+`sed -n '/^.\{65\}/!p'`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Print only lines of 65+ characters
+`sed -n '/^.\{65\}/p'`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Print line number 52
+`sed -n '52p'`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Delete the first 10 lines of a file
+`sed '1,10d'`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Delete the last line of a file
+`sed '$d'`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+# Delete lines matching pattern
+`sed '/pattern/d'`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Delete ALL blank lines from a file
+`sed '/^$/d'`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Add string to the beginning
+`sed 's/^/PREFIX/' FILE`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Add string to the end of line
+`sed 's/$/SUFFIX/' FILE`
 
-`sed 's/.*/PREFIX&SUFFIX/' FILE`
+## Add string to the beginning and end of line
 `sed 's/.*/PREFIX&SUFFIX/' FILE`
 
 | Option | Description                             | Example                                      |
@@ -96,8 +95,8 @@ sed[options] sed-command [input-file]
 ## Sed substitute command and flags
 
 ```
- sed 's/original-string/replacement-string/[flags]' [input-file]
- ```
+sed 's/original-string/replacement-string/[flags]' [input-file]
+```
 | Flag             | Description                                 | Example                                                |
 | ---------------- |-------------------------------------------- | ------------------------------------------------------ |
 | `g`              | Global substitution                         | `sed 's/development/production/g' .env`                |
