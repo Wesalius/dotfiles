@@ -2,6 +2,84 @@
 sed[options] sed-command [input-file]
 ```
 
+## Substitution
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`\\\r`/"`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+`sed 's/.*/PREFIX&SUFFIX/' FILE`
+
 | Option | Description                             | Example                                      |
 | ------ |---------------------------------------- | -------------------------------------------- |
 | `-n`   | Suppress default pattern space printing | `sed -n '3 p' config.conf`                   |
@@ -27,37 +105,3 @@ sed[options] sed-command [input-file]
 | `p`              | Print only the substituted line             | `sed -n 's/error_log = 0/error_log = 1/p' php.ini`     |
 | `i`              | Ignore case while searching                 | `sed 's/true/FALSE/i' config.php`                      |
 | `&`              | Gets the matched pattern                    | `sed 's/^.*/<&>/' index.xml`                           |
-| `( ) \1 \2 \3` | Group using `(` and `)`.<br>Use `\1`, `\2` in replacement to refer the group | `sed 's/([^,]*),([^,]*),([^,]*).*/\1,\3/g' words.txt` |
-
-
-## Substitution
-`sed 's/hello/world/' input.txt > output.txt`
-
-## Delete a Line Containing a Specific String
-`sed '/foo/d' bar.txt   `
-
-## Header
-`sed   `
-
-## Header
-`sed   `
-
-
-## Header
-`sed   `
-
-
-## Header
-`sed   `
-
-
-## Header
-`sed   `
-
-
-## Header
-`sed   `
-
-
-## Header
-`sed   `
